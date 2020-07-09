@@ -15,3 +15,27 @@ const questions = [
     },
 
 ];
+function getUserInputs(){
+    inquirer.prompt(questions)
+    .then(function(response){
+        console.log(response);
+        var readmeText = `
+# Project title: ${response.title}  
+### GitHub: ${response.githubName}  
+![GitHub license](https://img.shields.io/badge/license-${response.badge}-blue.svg)
+
+        `
+        fs.writeFileSync("newREADME.md", readmeText, function(){
+            console.log("readme generated")
+        })
+    })
+}
+getUserInputs();
+// function writeToFile(fileName, data) {
+// }
+
+// function init() {
+
+// }
+
+// init();

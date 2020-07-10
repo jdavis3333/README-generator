@@ -4,7 +4,7 @@ const fs = require("fs");
 const questions = [
     {
         type: "input",
-        message: "What is the title of your project?",
+        message: "What is the Title of your project?",
         name: "title",
     },
     {
@@ -18,18 +18,13 @@ const questions = [
         name: "description",
     },
     {
-        type: "",
-        message: "Table of contents",
-        name: "table",
-    },
-    {
         type: "input",
-        message: "A step by step series of examples that tell you how to get a development env running",
+        message: "What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.",
         name: "installation",
     },
     {
         type: "input",
-        message: "provide instructions on how the application is to be used",
+        message: "Provide instructions and examples for use.",
         name: "usage",
     },
     {
@@ -40,12 +35,12 @@ const questions = [
     },
     {
         type: "input",
-        message: "List any other contributors to this project",
+        message: "If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so.",
         name: "contributors",
     },
     {
         type: "input",
-        message: "Tests?",
+        message: "If you have writtend tests for your application, provide examples on how to run them.",
         name: "tests",
     },
 
@@ -57,22 +52,36 @@ function getUserInputs() {
             console.log(response);
             var readmeText = `
 # Project title: ${response.title} 
+
 ## Project description
 ${response.description} 
+
 ## Table of Contents
-${response.table}
+* [Installation](##installation)
+* [Usage](##Usage)
+* [License](##License)
+* [Contributing](##Contributing)
+* [Tests](##Tests)
+* [Questions](##Questions)
+
 ### Installation
 ${response.installation}
+
 ### Usage
 ${response.usage}
-### License
-This project is licensed under the ![GitHub license](https://img.shields.io/badge/license-${response.badge}-blue.svg).
+
 ### Contributing
 ${response.contributors}
+
 ### Tests
 ${response.usage}
-###Questions
+
+### Questions
+
 ### GitHub: ${response.githubName}  
+
+### License
+This project is licensed under the ![GitHub license](https://img.shields.io/badge/license-${response.badge}-blue.svg).
 
 
         `
@@ -82,11 +91,3 @@ ${response.usage}
         })
 }
 getUserInputs();
-// function writeToFile(fileName, data) {
-// }
-
-// function init() {
-
-// }
-
-// init();

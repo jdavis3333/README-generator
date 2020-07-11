@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/jdavis3333/README-generator#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "fs": "0.0.1-security",
     "inquirer": "^7.3.0"
   }

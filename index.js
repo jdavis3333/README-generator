@@ -1,10 +1,12 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const axios = require("axios");
+let userData = {}
 
 const questions = [
     {
         type: "input",
-        message: "What is the Title of your project?",
+        message: "What is the title of your project?",
         name: "title",
     },
     {
@@ -40,7 +42,7 @@ const questions = [
     },
     {
         type: "input",
-        message: "If you have writtend tests for your application, provide examples on how to run them.",
+        message: "If you have written tests for your application, provide examples on how to run them.",
         name: "tests",
     },
 
@@ -50,11 +52,15 @@ function getUserInputs() {
     inquirer.prompt(questions)
         .then(function (response) {
             console.log(response);
+            userData = response;
+            return axios.get(`https://api.github.com/users/${userData.githubName}`)
+            .then(function (axiosResponse) {
+                console.log(axiosResponse)
             var readmeText = `
-# Project title: ${response.title} 
+# Project Title: ${response.title} 
 
 ## Project description
-${response.description} 
+${userData.description} 
 
 ## Table of Contents
 * [Installation](##installation)
@@ -65,23 +71,23 @@ ${response.description}
 * [Questions](##Questions)
 
 ### Installation
-${response.installation}
+${userData.installation}
 
 ### Usage
-${response.usage}
+${userData.usage}
 
 ### Contributing
-${response.contributors}
+${userData.contributors}
 
 ### Tests
-${response.usage}
+${userData.usage}
 
 ### Questions
-
-### GitHub: ${response.githubName}  
+* ![GitHub Avatar](${axiosResponse.data.avatar_url})
+* ${axiosResponse.data.email}
 
 ### License
-This project is licensed under the ![GitHub license](https://img.shields.io/badge/license-${response.badge}-blue.svg).
+This project is licensed under the ![GitHub license](https://img.shields.io/badge/license-${userData.badge}-blue.svg).
 
 
         `
@@ -89,5 +95,6 @@ This project is licensed under the ![GitHub license](https://img.shields.io/badg
                 console.log("readme generated")
             })
         })
+})
 }
 getUserInputs();

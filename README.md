@@ -8,12 +8,10 @@ The goal of this project was to create a command-line application and a README.m
 
 ### Execution
 
-* Gif Preview
-```
+* Application in action
+
 ![README](https://user-images.githubusercontent.com/66157077/87264347-9a2b4980-c474-11ea-813e-2a6a973a4643.gif)
-```            
-* Template to get user input and write to markdown file
-```
+
 * Generated questions to prompt user
 ```
 const questions = [
@@ -35,6 +33,7 @@ const questions = [
                 console.log(axiosResponse)
 ```            
 * Template to get user input and write to markdown file
+
 ```
  var readmeText = `
 # Project Title: ${response.title} 

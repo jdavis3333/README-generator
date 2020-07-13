@@ -16,6 +16,11 @@ const questions = [
     },
     {
         type: "input",
+        message: "What is your email address?",
+        name: "email",
+    },
+    {
+        type: "input",
         message: "Provide a brief description of the project",
         name: "description",
     },
@@ -83,13 +88,11 @@ ${userData.contributors}
 ${userData.usage}
 
 ### Questions
-* ![GitHub Avatar](${axiosResponse.data.avatar_url})
-* ${axiosResponse.data.email}
+![GitHub Avatar](${axiosResponse.data.avatar_url})
+* Email: <${userData.email}>
 
 ### License
 This project is licensed under the ![GitHub license](https://img.shields.io/badge/license-${userData.badge}-blue.svg).
-
-
         `
             fs.writeFileSync("newREADME.md", readmeText, function () {
                 console.log("readme generated")

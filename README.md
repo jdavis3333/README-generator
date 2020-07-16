@@ -10,7 +10,7 @@ The goal of this project was to create a command-line application and a README.m
 
 * Application in action
 
-![README](https://user-images.githubusercontent.com/66157077/87264347-9a2b4980-c474-11ea-813e-2a6a973a4643.gif)
+![README](https://drive.google.com/file/d/1XGWQu0zQ7UhvG2R92tNyXyGKDUFw9g5T/view?usp=sharing)
 
 * Generated questions to prompt user
 ```

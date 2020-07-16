@@ -85,7 +85,7 @@ ${userData.usage}
 ${userData.contributors}
 
 ### Tests
-${userData.usage}
+${userData.tests}
 
 ### Questions
 ![GitHub Avatar](${axiosResponse.data.avatar_url})

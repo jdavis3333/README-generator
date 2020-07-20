@@ -10,7 +10,7 @@ The goal of this project was to create a command-line application and a README.m
 
 * Application in action
 
-https://drive.google.com/file/d/1XGWQu0zQ7UhvG2R92tNyXyGKDUFw9g5T/view?usp=sharing
+https://www.youtube.com/watch?v=PODDtwNLrro
 
 * Generated questions to prompt user
 ```

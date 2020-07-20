@@ -18,7 +18,7 @@ NA
 ### Usage
 1. open command prompt. 2. navigate to the folder that stores this file. 3. type `node index.js.`
 
-README-generator in action can be viewed here: https://drive.google.com/file/d/1XGWQu0zQ7UhvG2R92tNyXyGKDUFw9g5T/view?usp=sharing
+README-generator in action can be viewed here: https://www.youtube.com/watch?v=PODDtwNLrro
 
 ### Contributing
 NA
